@@ -92,25 +92,52 @@ var sample = window.document.getElementById("sample");
 function addEmployee(name, title, extension) {
 	"use strict";
 	
-	var td1, td2, td3, td4, addRow, newRow, content;
-	td1 = "<td>" + name + "</td>";
-	td2 = "<td>" + title + "</td>";
-	td3 = "<td>" + extension + "</td>";
-	td4 = "<td>" + "<button id='delete'>Delete</button>" + "</td>";
+	var name, td1, td2, td3, td4, addRow, newRow, content,content2,content3,content4;
+	td1 = name;
+	td2 = title;
+	td3 = extension;
+	td4 ="<button id='delete'>Delete</button>";
 	
-	newRow = window.document.createElement("tr");
+	
 
 	
+	//Create Row and data	
+	newRow = window.document.createElement("tr");
 	
+
 	
+	//Create the TD's 
+	content = window.document.createElement("td");
+	content2 = window.document.createElement("td");
+	content3 = window.document.createElement("td");
+	content4 = window.document.createElement("td");
 	
-	
-	content = window.document.createTextNode(td1 + td2 + td3 + td4 + '<br>' );
+//Put content in the table data
+/*	content.createTextNode("Hello");
+	content2 += title;
+	content3 += extension
+	content4 += "<button id='delete'>Delete</button>";
+	*/
+//Combine Them
 	newRow.appendChild(content);
+	newRow.appendChild(content2);
+	newRow.appendChild(content3);
+	newRow.appendChild(content4);
+
+	
 	window.console.log(newRow);
-	employeeTable.appendChild(newRow);
+	//newRow.appendChild(content);
 	
 	
+	
+	
+	
+//	content = window.document.createTextNode(td1 + td2 + td3 + td4 + '<br>' );
+//	newRow.appendChild(content);
+//	window.console.log(newRow);
+//	employeeTable.appendChild(newRow);
+	
+	//window.document.body.insertBefore(sample,newRow);
 	sample.appendChild(newRow);
 	//window.document.body.insertBefore()
 	

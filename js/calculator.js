@@ -42,9 +42,13 @@ function init() {
 //Store them in an Array so I can grab them
 	
 //Function to grab the button value and put it in the text box
-	function getTheValue(this) {
+	var selection = Event.currentTarget.value;
+	function getTheValue (selection) {
+	
+		window.console.log(selection);
 		
-		switch (this) 
+		
+	/*	switch (e.currentTarget) 
 			case "one" :
 					outputArea.value += one;
 					break;
@@ -85,8 +89,8 @@ function init() {
 					outputArea.value += divide;
 					break;
 		
+			}*/
 	}
-	
 //Evaluate the current value in the Output Box				
 function evaluateTheOutput(outputAreaCurrentValue) {
 		"use strict";
