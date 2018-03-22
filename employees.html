@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Assignment 05 - Employee Management Application</title>
+	<script src="js/employee-management.js"></script>
+
+	<style>
+		#header {
+			float: left;
+			width: 100%;
+
+
+		}
+
+		table {
+			width: 100%;
+
+		}
+
+		table tbody tr {
+			width: 100%;
+
+		}
+
+		table,
+		table th {
+
+			border: 1px solid black;
+
+		}
+
+		table tbody tr td {
+			width: 20%;
+		}
+	</style>
+</head>
+
+<body>
+	<h1>Employee Management Application</h1>
+	<div id="header">
+		<button id="sortEmployees">Show Employees</button>
+		<input type="text" id="name" placeholder="Name">
+		<input type="text" id="Title" placeholder="Title">
+		<input type="number" id="Extension" placeholder="Extension">
+		<input type="button" id="AddEmployee" value="Add Employee">
+
+		<div id="mainContent">
+
+			<h2>Employees</h2>
+
+			<table id="employeeTable">
+				<tbody>
+					<thead>
+						<tr>
+							<th>Name</th>
+							<th>Title</th>
+							<th>Extension</th>
+							<th>Delete or Nah?</th>
+						</tr>
+					</thead>
+					
+					<tr id="sample"></tr>
+				</tbody>
+			</table>
+		</div>
+
+	</div>
+	
+<script>
+	
+	
+var name = window.document.getElementById("name").value;
+var title = window.document.getElementById("Title").value;
+var extension = window.document.getElementById("Extension").value;
+var employeeTable =  window.document.getElementById("employeeTable");
+var btnShowEmployees =	window.document.getElementById("sortEmployees");
+var btnAddEmployees =	window.document.getElementById("AddEmployee");
+	
+var arrTotalEmployees = [];
+
+function addEmployee(name, title, extension) {
+	"use strict";
+	arrTotalEmployees.push([name, title, extension]); //Add the Employee to the List of Emps.
+	var td1, td2, td3, td4, addRow, newRow, content;
+	td1 = "<td>" + name + "</td>";
+	td2 = "<td>" + title + "</td>";
+	td3 = "<td>" + extension + "</td>";
+	td4 = "<td>" + "<button id='delete'>Delete</button>" + "</td>";
+	
+	
+	newRow = window.document.createElement("tr");
+	content = window.document.createTextNode(" ");
+	addRow = td1 + td2 + td3 + td4 + "<br>";
+	newRow.appendChild(addRow);
+	content.appendChild(newRow);
+
+	
+	
+
+	
+		
+		
+	
+	
+	
+/*	window.document.write(addRow) // Write to the table
+	
+	employeeTable.appendChild();// Add the Table Rows
+
+	employeeTable.appendChild()//Add Name
+	employeeTable.appendChild()//Add title
+	employeeTable.appendChild()//Add extension
+	employeeTable.appendChild()//Add button*/
+}
+	
+	
+	
+/*	
+function sortEmployees() {
+	
+arrTotalEmployees.sort();
+	
+}
+*/
+	
+	
+btnAddEmployees.addEventListener("click", addEmployee);
+//btnShowEmployees.addEventListener("click", sortEmployees);
+	
+addEmployee("Michael Scott", "Regional Manager", "4442");
+addEmployee("Dwight Schrute", "A.T.R.M.", "7271");
+addEmployee("Kevin Malone", "Accountant", "6969");
+addEmployee("Creed Bratton", "?", "????");
+	
+	
+	
+	
+	</script>	
+</body>
+</html>
