@@ -12,7 +12,17 @@
 
 
 		}
-
+		#header input,#header button {
+			width:15%;
+			margin-left: 2.5%;
+		
+			padding:0;
+		
+			
+			
+		}
+		#header button {background-color: skyblue;}
+		
 		table {
 			width: 100%;
 
@@ -43,7 +53,7 @@
 		<input type="text" id="name" placeholder="Name">
 		<input type="text" id="Title" placeholder="Title">
 		<input type="number" id="Extension" placeholder="Extension">
-		<input type="button" id="AddEmployee" value="Add Employee">
+		<button id="AddEmployee">Add Employee"</button>
 
 		<div id="mainContent">
 
@@ -68,35 +78,43 @@
 	</div>
 	
 <script>
-	
-	
+//Global Variables
 var name = window.document.getElementById("name").value;
 var title = window.document.getElementById("Title").value;
 var extension = window.document.getElementById("Extension").value;
 var employeeTable =  window.document.getElementById("employeeTable");
-var btnShowEmployees =	window.document.getElementById("sortEmployees");
-var btnAddEmployees =	window.document.getElementById("AddEmployee");
-	
+var btnShowEmployees = window.document.getElementById("sortEmployees");
+var btnAddEmployees = window.document.getElementById("AddEmployee");
+//Array to hold Employees
 var arrTotalEmployees = [];
+var sample = window.document.getElementById("sample");
 
 function addEmployee(name, title, extension) {
 	"use strict";
-	arrTotalEmployees.push([name, title, extension]); //Add the Employee to the List of Emps.
+	
 	var td1, td2, td3, td4, addRow, newRow, content;
 	td1 = "<td>" + name + "</td>";
 	td2 = "<td>" + title + "</td>";
 	td3 = "<td>" + extension + "</td>";
 	td4 = "<td>" + "<button id='delete'>Delete</button>" + "</td>";
 	
-	
 	newRow = window.document.createElement("tr");
-	content = window.document.createTextNode(" ");
-	addRow = td1 + td2 + td3 + td4 + "<br>";
-	newRow.appendChild(addRow);
-	content.appendChild(newRow);
 
 	
 	
+	
+	
+	
+	content = window.document.createTextNode(td1 + td2 + td3 + td4 + '<br>' );
+	newRow.appendChild(content);
+	window.console.log(newRow);
+	employeeTable.appendChild(newRow);
+	
+	
+	sample.appendChild(newRow);
+	//window.document.body.insertBefore()
+	
+	arrTotalEmployees.push([name, title, extension]); //Add the Employee to the List of Emps.
 
 	
 		
