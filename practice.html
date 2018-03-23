@@ -6,116 +6,32 @@
     <script src="js/dom-practice.js"></script>
 </head>
 <body>
- <!--Part 1-->   
-    <button onclick="fnClicked"></button>
-    <script>
-	function fnClicked() {
-		window.alert("I have been clicked!");
-		
-	}
-	</script>
-	
-<!--Part 2-->
+ <!--Part 1-->
 <button onclick="fnClicked"></button>
-    <script>
+ <!--Part 2-->
+<button onclick="fnClicked"></button>
+ <!--Part 3-->	
+<button id="thisButton"></button>
+<!--Part 4-->		
+<button id="thisButton"></button>
 	
-	var button = window.document.getElementById("fnClicked");
-	button.onclick = function fnClicked() {
-		window.alert("I have been clicked!");
+<!--Part 5-->	
 
-	};
-	</script>
-	
+<!--Part 6-->	
+<a href="http://www.google.com" id="redirect">Visit Google</a>
 
-<!--Part 3-->
+<!--Part 7-->
 		
-	<button id="thisButton"></button>
-	<script>
-	var btnbutton = window.document.getElementById("thisButton");
+<input type="text" id="text">
+<button id="btnButton"> </button>
 		
-	window.document.addEventListener("click", function() {
-		
-		window.alert("I have been clicked!");
-		
-		
-	});
-	</script>
-		
-<!--Part 4-->
-		
-	<button id="thisButton"></button>
-	<script>
-	var btnbutton = window.document.getElementById("thisButton");
-		
-	function thisClicked(id) {
-		
-		window.alert("I have been clicked!");
-		
-		
-	})	
-	
-	btnbutton.addEventListener("click",thisClicked(id));
-	</script>
-
-	<!--Part 5-->	
-		
-		
-	<!--Part 6-->	
-		<a href="http://www.google.com" id="redirect">Visit Google</a>
-		
-		<script>
-			var redirect = window.document.getElementById("redirect")
-			
-			redirect.addEventListener("click", function (e) {	
-				
-				e.preventDefault();
-				
-			});
-		</script>
-	<!--Part 7-->
-		
-		<input type="text" id="text">
-		<button id="btnButton"> </button>
-		
-		
-		<script>
-		
-		var inputText = window.document.getElementById("text").value;
-		var button = window.document.getElementById("btnButton");
-			
-		button.addEventListener("click", function() {
-		window.alert("You entered" + inputText + "as your value");
-		button.disabled = "true";
-			});
-		</script>
-		
-<!--Part 8 ON ANOTHER PAGE-->
-	
-	<!--Part 9-->
+<!--Part 8 -->
+	<!--ON ANOTHER PAGE THE INDEX.HTML PAGE-->
+<!--Part 9-->
 <button id="btnStart">Start</button>
 <button id="btnStop">Stop</button>
-	
-	<script>
-	
-var btnStart = window.document.getElementById("btnStart");		
-var btnStop = window.document.getElementById("btnStop");
-var message = window.console.log(“Learning JavaScript is fun!”)
+<!--Part 10-->	
 
-function StartWriting() {
-	setInterval(message, 2000);
-}
-		
-function StopWriting() {
-	clearInterval(), 2000);
-}
-		
-btnStart.addEventListener("click", StartWriting);	
-btnStop.addEventListener("click", StopWriting);	
-		
-	</script>
-	
-	<!--Part 10-->
-	
-		
+
 </body>
 </html>

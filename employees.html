@@ -21,7 +21,19 @@
 			
 			
 		}
-		#header button {background-color: skyblue;}
+		#header button, #AddEmployee {
+			background-color: skyblue;
+			min-height: 44px; 
+			min-width: 44px;
+			
+		
+		}
+		
+		#mainContent button {
+			min-width: 90%;
+			
+			
+		}
 		
 		table {
 			width: 100%;
@@ -50,11 +62,11 @@
 	<h1>Employee Management Application</h1>
 	<div id="header">
 		<button id="sortEmployees">Show Employees</button>
-		<input type="text" id="name" placeholder="Name">
-		<input type="text" id="Title" placeholder="Title">
-		<input type="number" id="Extension" placeholder="Extension">
-		<button id="AddEmployee">Add Employee"</button>
-
+		<input type="text" id="name" placeholder="Name" value='' required>
+		<input type="text" id="title" placeholder="Title" value='' required>
+		<input type="number" id="extension" placeholder="Extension" value='' required>
+		<input type="submit" id="AddEmployee" value="Add Employee">
+		
 		<div id="mainContent">
 
 			<h2>Employees</h2>
@@ -80,17 +92,22 @@
 <script>
 //Global Variables
 var name = window.document.getElementById("name").value;
-var title = window.document.getElementById("Title").value;
-var extension = window.document.getElementById("Extension").value;
+var title = window.document.getElementById("title").value;
+var extension = window.document.getElementById("extension").value;
+
 var employeeTable =  window.document.getElementById("employeeTable");
 var btnShowEmployees = window.document.getElementById("sortEmployees");
 var btnAddEmployees = window.document.getElementById("AddEmployee");
 //Array to hold Employees
-var arrTotalEmployees = [];
+var arrTotalEmployees = [["Michael Scott", "Regional Manager", "4442"],["Dwight Schrute", "A.T.R.M.", "7271"],["Kevin Malone", "Accountant", "6969"],["Creed Bratton", "?", "????"]];
 var sample = window.document.getElementById("sample");
 
 function addEmployee(name, title, extension) {
 	"use strict";
+	//Grab And Store the Values
+	name = window.document.getElementById("name").value;
+	title = window.document.getElementById("title").value;
+	extension = window.document.getElementById("extension").value;
 	
 	var name, td1, td2, td3, td4, addRow, newRow, content,content2,content3,content4;
 	td1 = name;
@@ -98,13 +115,8 @@ function addEmployee(name, title, extension) {
 	td3 = extension;
 	td4 ="<button id='delete'>Delete</button>";
 	
-	
-
-	
 	//Create Row and data	
 	newRow = window.document.createElement("tr");
-	
-
 	
 	//Create the TD's 
 	content = window.document.createElement("td");
@@ -112,85 +124,81 @@ function addEmployee(name, title, extension) {
 	content3 = window.document.createElement("td");
 	content4 = window.document.createElement("td");
 	
-//Put content in the table data
-/*	content.createTextNode("Hello");
-	content2 += title;
-	content3 += extension
-	content4 += "<button id='delete'>Delete</button>";
-	*/
-//Combine Them
+	//Combine Them
 	newRow.appendChild(content);
 	newRow.appendChild(content2);
 	newRow.appendChild(content3);
 	newRow.appendChild(content4);
 
-	
+	//Put all that good stuff in the Nodes
 	window.console.log(newRow);
 	window.console.log(newRow.childNodes[3]);
 	newRow.childNodes[0].innerHTML = name;
 	newRow.childNodes[1].innerHTML = title;
 	newRow.childNodes[2].innerHTML = extension;
 	newRow.childNodes[3].innerHTML = td4;
-	
-	
-	
-	
-	
-	//newRow.appendChild(content);
-	
-	
-	
-	
-	
-//	content = window.document.createTextNode(td1 + td2 + td3 + td4 + '<br>' );
-//	newRow.appendChild(content);
-//	window.console.log(newRow);
+	//Add the row to the Table
 	employeeTable.appendChild(newRow);
+	//Add it to Our Array(List of Employees.)
+	arrTotalEmployees.push([name, title, extension]); //Add the Employee to the 
+	window.console.log(arrTotalEmployees);
 	
-	//window.document.body.insertBefore(sample,newRow);
-	//sample.appendChild(newRow);
-	//window.document.body.insertBefore()
-	
-	arrTotalEmployees.push([name, title, extension]); //Add the Employee to the List of Emps.
 
+	window.console.log(name);
+	window.console.log(title);
+	window.console.log(extension);
 	
-		
-		
 	
-	
-	
-/*	window.document.write(addRow) // Write to the table
-	
-	employeeTable.appendChild();// Add the Table Rows
-
-	employeeTable.appendChild()//Add Name
-	employeeTable.appendChild()//Add title
-	employeeTable.appendChild()//Add extension
-	employeeTable.appendChild()//Add button*/
 }
 	
+
+
 	
-	
-/*	
 function sortEmployees() {
+var i; 	
+var x;
 	
 arrTotalEmployees.sort();
 	
-}
+	for (i = 0; i <= arrTotalEmployees.length; i += 1){
+		newRow = window.document.createElement("tr");
+		content = window.document.createElement("td");
+		content2 = window.document.createElement("td");
+		content3 = window.document.createElement("td");
+		content4 = window.document.createElement("td");
+
+		newRow.appendChild(content);
+		newRow.appendChild(content2);
+		newRow.appendChild(content3);
+		newRow.appendChild(content4);
+
+		newRow.childNodes[0].innerHTML = arrTotalEmployees[i][0];
+		newRow.childNodes[1].innerHTML = arrTotalEmployees[i][1];
+		newRow.childNodes[2].innerHTML = arrTotalEmployees[i][2];
+		newRow.childNodes[3].innerHTML = arrTotalEmployees[i][3];
+
+		employeeTable.appendChild(newRow);
+
+	}	
+
+	
+};
+	
+
+/*	
+
+//Add in employees
+addEmployee();
+addEmployee();
+addEmployee();
+addEmployee();
 */
 	
-	
 btnAddEmployees.addEventListener("click", addEmployee);
-//btnShowEmployees.addEventListener("click", sortEmployees);
+btnShowEmployees.addEventListener("click", sortEmployees);
 	
-addEmployee("Michael Scott", "Regional Manager", "4442");
-addEmployee("Dwight Schrute", "A.T.R.M.", "7271");
-addEmployee("Kevin Malone", "Accountant", "6969");
-addEmployee("Creed Bratton", "?", "????");
-	
-	
-	
-	
-	</script>	
+
+
+</script>	
 </body>
 </html>
