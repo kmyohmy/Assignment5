@@ -126,6 +126,16 @@ function addEmployee(name, title, extension) {
 
 	
 	window.console.log(newRow);
+	window.console.log(newRow.childNodes[3]);
+	newRow.childNodes[0].innerHTML = name;
+	newRow.childNodes[1].innerHTML = title;
+	newRow.childNodes[2].innerHTML = extension;
+	newRow.childNodes[3].innerHTML = td4;
+	
+	
+	
+	
+	
 	//newRow.appendChild(content);
 	
 	
@@ -135,10 +145,10 @@ function addEmployee(name, title, extension) {
 //	content = window.document.createTextNode(td1 + td2 + td3 + td4 + '<br>' );
 //	newRow.appendChild(content);
 //	window.console.log(newRow);
-//	employeeTable.appendChild(newRow);
+	employeeTable.appendChild(newRow);
 	
 	//window.document.body.insertBefore(sample,newRow);
-	sample.appendChild(newRow);
+	//sample.appendChild(newRow);
 	//window.document.body.insertBefore()
 	
 	arrTotalEmployees.push([name, title, extension]); //Add the Employee to the List of Emps.
