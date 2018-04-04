@@ -64,7 +64,9 @@ var button = window.document.getElementById("btnButton");
 	button.disabled = "true";
 			});
 //STEP 8
-<!--Part 8 ON ANOTHER PAGE-->
+	
+	/*Part 8 ON ANOTHER PAGE(Index.html)*/
+
 //STEP 9
 	
 var btnStart = window.document.getElementById("btnStart");		

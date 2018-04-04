@@ -102,7 +102,7 @@ var btnAddEmployees = window.document.getElementById("AddEmployee");
 var arrTotalEmployees = [["Michael Scott", "Regional Manager", "4442"],["Dwight Schrute", "A.T.R.M.", "7271"],["Kevin Malone", "Accountant", "6969"],["Creed Bratton", "?", "????"]];
 var sample = window.document.getElementById("sample");
 var btnDeleteEmployee = window.document.getElementsByClassName("delete");
-	window.console.log(btnDeleteEmployee);
+	window.console.log(btnDeleteEmployee);;
 
 function addEmployee(name, title, extension) {
 	"use strict";
@@ -115,10 +115,8 @@ function addEmployee(name, title, extension) {
 	td1 = name;
 	td2 = title;
 	td3 = extension;
-	td4 = window.document.createElement("button");
-	td4.setAttribute("class", "delete");
-	td4.value = "Delete";
-	td4.innerHTML = "Delete";
+	td4 ="<button class='delete'>Delete</button>";
+	td5 = window.document.createElement("button");
 	
 	
 	//Create Row and data	
@@ -142,7 +140,7 @@ function addEmployee(name, title, extension) {
 	newRow.childNodes[0].innerHTML = name;
 	newRow.childNodes[1].innerHTML = title;
 	newRow.childNodes[2].innerHTML = extension;
-	newRow.childNodes[3].appendChild(td4);
+	newRow.childNodes[3].innerHTML = td5;
 	//Add the row to the Table
 	employeeTable.appendChild(newRow);
 	//Add it to Our Array(List of Employees.)
@@ -163,16 +161,11 @@ function addEmployee(name, title, extension) {
 function sortEmployees() {
 var i; 	
 var x;
-var td4 = window.document.createElement("button");
-	td4.setAttribute("class", "delete");
-	td4.value = "Delete";
-	td4.innerHTML = "Delete";
-	console.log(td4);
+var td4 ="<button id='delete'>Delete</button>";
 	
 arrTotalEmployees.sort();
 	
 	for (i = 0; i <= arrTotalEmployees.length; i += 1){
-		
 		newRow = window.document.createElement("tr");
 		content = window.document.createElement("td");
 		content2 = window.document.createElement("td");
@@ -187,7 +180,7 @@ arrTotalEmployees.sort();
 		newRow.childNodes[0].innerHTML = arrTotalEmployees[i][0];
 		newRow.childNodes[1].innerHTML = arrTotalEmployees[i][1];
 		newRow.childNodes[2].innerHTML = arrTotalEmployees[i][2];
-		newRow.childNodes[3].innerHTML = "<button class='delete'>Delete</button>";
+		newRow.childNodes[3].innerHTML = td4;
 
 		employeeTable.appendChild(newRow);
 
